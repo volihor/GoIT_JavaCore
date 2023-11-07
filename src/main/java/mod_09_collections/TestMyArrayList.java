@@ -26,6 +26,10 @@ public class TestMyArrayList {
 
         System.out.println("    after clear() strArrayList = " + strArrayList);
 
+        System.out.println("\nintArrayList.size() = " + intArrayList.size());
+        System.out.println("  after remove intArrayList = " + intArrayList);
+        intArrayList.remove(intArrayList.size());
+        System.out.println("  -- Remove ---\n after intArrayList.remove(3): " + intArrayList);
         System.out.println("intArrayList.size() = " + intArrayList.size());
         System.out.println("strArrayList.size() = " + strArrayList.size());
 

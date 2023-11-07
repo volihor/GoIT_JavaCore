@@ -42,11 +42,15 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
      */
     @Override // interface InterfaceMyList
     public E remove(int index) {
-        if (index >= size){
-            throw new IndexOutOfBoundsException();
+        try{
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to remove element !!! \n");
+            e.printStackTrace();
         }
-        E toReturn = null;
-        toReturn = arrayList[index];
+        E toReturn = arrayList[index];
         E[] tmpArrayList =(E[]) new Object[capacity];
 //                * @param      src      the source array.
 //                * @param      srcPos   starting position in the source array.
@@ -99,6 +103,14 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
      * Returns element by index
      */
     public E get(int index) {
+        try{
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to get element !!! \n");
+            e.printStackTrace();
+        }
         return arrayList[index];
     }
 

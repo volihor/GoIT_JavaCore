@@ -60,6 +60,14 @@ public class MyLinkedList<E> implements InterfaceMyList<E> {
 
     @Override
     public E remove(int index) {
+        try{
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to remove element !!! \n");
+            e.printStackTrace();
+        }
         Node<E> nodeToRemove = findNode(index);
         E e = nodeToRemove.item;
         removeNode(nodeToRemove);
@@ -67,6 +75,14 @@ public class MyLinkedList<E> implements InterfaceMyList<E> {
         return e;
     }
     private Node<E> findNode(int index){
+        try{
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to find Node element !!! \n");
+            e.printStackTrace();
+        }
         Node<E> eNode;
         if(index <= size/2 ){
             eNode = head;
