@@ -66,12 +66,16 @@ public interface InterfaceMyList<E> extends InterfaceMyCollection<E> {
     /**
      * Removes all of the elements from this list (optional operation).
      * The list will be empty after this call returns.
-     *
-     * @throws UnsupportedOperationException if the <tt>clear</tt> operation
-     *         is not supported by this list
      */
+    void clear();
 
-    void clear();       // очищає колекцію
+    /**
+     * Returns the number of elements in this collection.
+     */
     public int size();          // повертає розмір колекції
+
+    /**
+     * Returns element by index
+     */
     public E get(int index);  // повертає елемент за індексом
 }

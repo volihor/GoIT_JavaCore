@@ -1,8 +1,5 @@
 package mod_09_collections;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class TestMyArrayList {
     public static void main(String[] args) {
         InterfaceMyList<Integer> intArrayList = new MyArrayList<>(5);

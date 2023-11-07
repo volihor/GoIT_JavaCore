@@ -23,18 +23,19 @@ public interface InterfaceMyCollection<E> {
      * @param e element whose presence in this collection is to be ensured
      * @return <tt>true</tt> if this collection changed as a result of the
      *         call
-     * @throws UnsupportedOperationException if the <tt>add</tt> operation
-     *         is not supported by this collection
-     * @throws ClassCastException if the class of the specified element
-     *         prevents it from being added to this collection
-     * @throws NullPointerException if the specified element is null and this
-     *         collection does not permit null elements
-     * @throws IllegalArgumentException if some property of the element
-     *         prevents it from being added to this collection
-     * @throws IllegalStateException if the element cannot be added at this
-     *         time due to insertion restrictions
+//     * @throws UnsupportedOperationException if the <tt>add</tt> operation
+//     *         is not supported by this collection
+//     * @throws ClassCastException if the class of the specified element
+//     *         prevents it from being added to this collection
+//     * @throws NullPointerException if the specified element is null and this
+//     *         collection does not permit null elements
+//     * @throws IllegalArgumentException if some property of the element
+//     *         prevents it from being added to this collection
+//     * @throws IllegalStateException if the element cannot be added at this
+//     *         time due to insertion restrictions
      */
     boolean add(E e);
+
     /**
      * Removes a single instance of the specified element from this
      * collection, if it is present (optional operation).  More formally,
@@ -56,6 +57,8 @@ public interface InterfaceMyCollection<E> {
      *         is not supported by this collection
      */
     boolean remove(E e);
+
+
     /**
      * Removes all of the elements from this collection (optional operation).
      * The collection will be empty after this method returns.

@@ -3,11 +3,6 @@ package mod_09_collections;
 import java.util.Arrays;
 
 public class MyArrayList<E> implements InterfaceMyList<E> {
-//    new ArrayList();
-//    add(Object value)
-//    remove(int index)
-//    clear()
-//    size()
 
     private static final int DEFAULT_CAPACITY = 10; // Default initial capacity.
     private  int capacity;    // The capacity of the ArrayList is the length of this array buffer.
@@ -27,7 +22,7 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
     @Override //
     public boolean add(E e) {
         if(size == capacity-1){
-            capacity = capacity + capacity/2;   // index of capacity growth is 1.5
+            capacity += capacity/2;   // index of capacity growth is 1.5
             arrayList = Arrays.copyOf(arrayList, capacity);
         }
         arrayList[size] = e;
@@ -100,10 +95,13 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
         return size == 0;
     }
 
-    //повертає елемент за індексом
+    /**
+     * Returns element by index
+     */
     public E get(int index) {
         return arrayList[index];
     }
+
     @Override
     public String toString(){
         return Arrays.toString(arrayList);
