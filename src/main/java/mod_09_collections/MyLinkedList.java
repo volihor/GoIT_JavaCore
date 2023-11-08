@@ -65,8 +65,7 @@ public class MyLinkedList<E> implements InterfaceMyList<E> {
                 throw new IndexOutOfBoundsException();
             }
         } catch(IndexOutOfBoundsException e){
-            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to remove element !!! \n");
-            e.printStackTrace();
+            System.out.println("\n!!! " +  e + " !!!\n Trying to use wrong Index value to Get element. \n");
         }
         Node<E> nodeToRemove = findNode(index);
         E e = nodeToRemove.item;
@@ -153,7 +152,7 @@ public class MyLinkedList<E> implements InterfaceMyList<E> {
     @Override
     public String toString(){
         if(head == null){
-            return "Linked list is empty !";
+            return " ---  Empty  ---";
         }
         Node<E> eNode = head;
         String s = "";

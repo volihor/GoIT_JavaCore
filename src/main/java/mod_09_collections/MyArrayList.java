@@ -47,8 +47,8 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
                 throw new IndexOutOfBoundsException();
             }
         } catch(IndexOutOfBoundsException e){
-            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to remove element !!! \n");
-            e.printStackTrace();
+            System.out.println("\n!!! " +  e + " !!!\n Trying to use wrong Index value to Remove element. \n");
+//            e.printStackTrace();
         }
         E toReturn = arrayList[index];
         E[] tmpArrayList =(E[]) new Object[capacity];
@@ -108,8 +108,8 @@ public class MyArrayList<E> implements InterfaceMyList<E> {
                 throw new IndexOutOfBoundsException();
             }
         } catch(IndexOutOfBoundsException e){
-            System.out.println("\n!!! IndexOutOfBoundsException.  Trying to use wrong index value to get element !!! \n");
-            e.printStackTrace();
+            System.out.println("\n!!! " +  e + " !!!\n Trying to use wrong Index value to Get element. \n");
+//            e.printStackTrace();
         }
         return arrayList[index];
     }

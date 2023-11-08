@@ -109,8 +109,12 @@ private static final int MIN_INITIAL_CAPACITY = 4; // Default initial capacity.
     // Resize array and coppy all elenemts into a new array.
     @Override
     public E remove(int index) {
-        if(index > (size - 1) || index < 0 ) {
-            return null;
+        try{
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException();
+            }
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("\n!!! " +  e + " !!!\n Trying to use wrong Index value. \n");
         }
         E[] newStackArray = (E[])new Object[lengthStackArray];
         E elementToRemove = (E)stackArray[index];
