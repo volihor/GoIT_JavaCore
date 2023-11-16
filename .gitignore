@@ -22,6 +22,9 @@
 *.ipr
 *.xml
 
+gson-2.10.1.jar
+.gitignore
+
 ### Eclipse ###
 .apt_generated
 .classpath
