@@ -12,13 +12,14 @@ public class PhoneNumberFinder {
         String phoneRegex = "(\\d{3}-\\d{3}-\\d{4})|(\\(\\d{3}\\) \\d{3}-\\d{4})";
         Pattern pattern = Pattern.compile(phoneRegex);
 
-        String strLine = bfr.readLine();
-        while(strLine != null) {
+//        String strLine = bfr.readLine();
+        String strLine;
+        while((strLine = bfr.readLine()) != null) {
             Matcher matcher = pattern.matcher(strLine);
             while (matcher.find()){
                 System.out.println(matcher.group());
             }
-            strLine = bfr.readLine();
+//            strLine = bfr.readLine();
         }
 
         bfr.close();
