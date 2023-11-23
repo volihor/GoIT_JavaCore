@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -18,17 +19,11 @@ public class OddIndexesNames {
         //  get ArrayList<String> from the file
         List<String> arrListOfNames = oin.readFromTextToArrayList(path);
         //  Print all names, vertical
-//      arrListOfNames.forEach(System.out::println);
+        arrListOfNames.forEach(System.out::println);
         //  get changed ArrayList<String> with odds indexes
-        List<String> oddIndexedNames = oin.getEvenIndexedStrings(arrListOfNames);
-
+        List<String> oddIndexedNames = oin.getOddIndexedStrings(arrListOfNames);
+        //  Print all odd Indexed Names
         oddIndexedNames.forEach(System.out::print);
-
-//        arrListOfNames.stream()
-//                .range(0, names.length)
-//                .filter(i -> arrlst.get(i))
-//                .map(arrlst-> arrlst.indexOf(Object o) + ". " + arrlst)
-//                .forEach(arrlst-> System.out.print(arrlst));
     }
 
     List<String> readFromTextToArrayList(String pathIn) {
@@ -48,13 +43,11 @@ public class OddIndexesNames {
         return  Arrays.asList(stringToArray.split(" "));
     }
 
-    List<String> getEvenIndexedStrings(List<String> arrListOfNames) {
-        List<String> evenIndexedNames = IntStream
+    List<String> getOddIndexedStrings(List<String> arrListOfNames) {
+        return IntStream
                 .range(0, arrListOfNames.size())
                 .filter(i -> i % 2 == 1)
                 .mapToObj(i -> i + ". " + arrListOfNames.get(i) + ",  ")
                 .collect(Collectors.toList());
-
-        return evenIndexedNames;
     }
 }
