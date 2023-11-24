@@ -1,6 +1,5 @@
 package mod_11_StreamAPI;
 
-import java.util.LinkedList;
 import java.util.stream.Stream;
 
 public class LinearCongruentialGenerator {
@@ -8,18 +7,21 @@ public class LinearCongruentialGenerator {
 
         LinearCongruentialGenerator lcg = new LinearCongruentialGenerator();
 
-        long a = 25214903917L;
-        long c = 11L;
-        long m = (long) Math.pow(2, 48);
-        long seed = 12345L;
-        int count = 8;  // Number of elements in the stream
+        long seed = 12345L;               // The initial value of sequence {@code seed}
+                                            // The first element (position {@code 0}) in the {@code Stream} will be
+                                            //     * the provided {@code seed}
+        long a = 25214903917L;            // The multiplier
+        long c = 11L;                     // The increment
+        long m = (long) Math.pow(2, 48);  // The modulus
 
-        Stream<Long> linearCongrGen = lcg.linCongrGen(a, c, m, seed, count);
+
+        Stream<Long> linearCongrGen = lcg.linCongrGen(seed, a, c, m);
         linearCongrGen.forEach(System.out::println);
     }
 
-    public Stream<Long> linCongrGen(long a, long c, long m, long seed, int count){
-        return Stream.iterate(seed, x-> (a * x + c) % m )
-                             .limit(count);
+    // !!! WARNING !!! Create infinite loop of  Linear Congruential Generator
+    public Stream<Long> linCongrGen(long seed, long a, long c, long m){
+        return Stream.iterate(seed, x-> (a * x + c) % m );     //  Stream.iterate( x[0]=seed, x(n)= f(n-1) )
+//        .limit(10);  // MaxSize 10
     }
 }
