@@ -30,9 +30,12 @@ public class StreamsBlender {
         int minLength = Math.min(sizeF, sizeS);
 
        return IntStream
+               //  IntStream.range to iterate over the indexes of the shorter list
                .range(0, minLength)
-               // mapToObj maps every index to a stream of two list elements, one from each list given
+               //  For each index creates a new stream containing the corresponding elements from both lists.
+               //  mapToObj maps every index to a stream of two list elements, one from each list given
                .mapToObj((i -> Stream.of(collectFirst.get(i), collectSecond.get(i))))
-               .flatMap(i->i);
+               //  Flattens these streams into a single stream using flatMap.
+               .flatMap(s->s);
     }
 }
