@@ -1,6 +1,5 @@
 package mod_09_collections;
 
-import java.sql.Struct;
 import java.util.Arrays;
 
 public class MyStack<E> implements InterfaceMyStack<E> {

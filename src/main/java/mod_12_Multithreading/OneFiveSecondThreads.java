@@ -1,7 +1,5 @@
 package mod_12_Multithreading;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.time.Clock;
 
 public class OneFiveSecondThreads {

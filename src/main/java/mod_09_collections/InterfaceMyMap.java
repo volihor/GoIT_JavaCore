@@ -1,7 +1,5 @@
 package mod_09_collections;
 
-import java.util.Map;
-
 /*
 * An object that maps keys to values.
 * A map cannot contain duplicate keys;
